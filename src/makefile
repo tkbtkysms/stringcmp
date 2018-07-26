@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -O3 -std=c++1z
+CXXFLAGS = -O3
 LINKFLAGS = -lm
 
 SRCS1 =\
@@ -31,7 +31,7 @@ debug:
 	make all CVXXFLAGS="-ggdb -W -Wall -pedantic"
 
 %.o:%.cpp
-	$(CXX) $(CXXFLAGS) -c $< 
+	$(CXX) $(CXXFLAGS) -c $<
 
 clean:
 	rm -f milnor *.o *~ milnor
