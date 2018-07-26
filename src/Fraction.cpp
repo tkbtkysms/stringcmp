@@ -1,6 +1,7 @@
 #include"Fraction.hpp"
 #include <iostream>
 #include <stdlib.h>
+#include <numeric>
 
 Fraction::Fraction(){
   denominator = 0;
@@ -11,7 +12,7 @@ Fraction Fraction::product(Fraction frac){
   if(denominator != 0 && frac.getdenominator() != 0){
     int tmp_denominator = denominator*frac.getdenominator();
     int tmp_numerator = numerator*frac.getnumerator();
-    int gcd = std::__gcd(abs(tmp_numerator),tmp_denominator);
+    int gcd = std::gcd(abs(tmp_numerator),tmp_denominator);
     answer.set(tmp_numerator/gcd,tmp_denominator/gcd);
   }
   else{
@@ -41,7 +42,7 @@ Fraction Fraction::subtract(Fraction frac){
       answer.set(0,0);
     }
     else{
-      int gcd = std::__gcd(new_numerator,lcm1);
+      int gcd = std::gcd(new_numerator,lcm1);
       answer.set(new_numerator/gcd,lcm1/gcd);
     }
   }
@@ -69,7 +70,7 @@ Fraction Fraction::add(Fraction frac){
       answer.set(0,0);
     }
     else{
-      int gcd = std::__gcd(abs(new_numerator),lcm1);
+      int gcd = std::gcd(abs(new_numerator),lcm1);
       answer.set(new_numerator/gcd,lcm1/gcd);
     }
   }
@@ -90,5 +91,5 @@ int Fraction::getdenominator(){
 }
 
 int Fraction::lcm(int a, int b){
-  return a*b/std::__gcd(a,b);
+  return a*b/std::gcd(a,b);
 }

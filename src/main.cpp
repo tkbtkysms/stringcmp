@@ -205,14 +205,14 @@ int main(int argc, char** argv) {
   Rule rule1,rule2;
   std::vector<Initialdata> Id1,Id2;
   read_input_data(Id1,rule1,ifs1);
-  if(Id_num1 > Id1.size() - 1 ){
-    std::cerr << "Initial data number is "<<  Id_num1 << ". The number of initial data:"<< Id1.size() - 1 << std::endl;
+  if(Id_num1 > Id1.size() ){
+    std::cerr << "Initial data number is "<<  Id_num1 << ". The number of initial data:"<< Id1.size()  << std::endl;
     exit(1);
   }
   if(od == "d"){
     read_input_data(Id2,rule2,ifs2);
-    if(Id_num2 > Id2.size() - 1){
-      std::cerr << "Initial data number is "<<  Id_num2 << ". The number of initial data:"<< Id1.size() - 1 << std::endl;
+    if(Id_num2 > Id2.size()){
+      std::cerr << "Initial data number is "<<  Id_num2 << ". The number of initial data:"<< Id2.size() << std::endl;
       exit(1);
     }
     if(nel == "n"){
