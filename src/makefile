@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -O3
+CXXFLAGS = -O3 -std=c++17
 LINKFLAGS = -lm
 
 SRCS1 =\
