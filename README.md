@@ -15,7 +15,7 @@ In this software, we change the segment and inverse names ($a_{i,j}$ and $a_{i,j
 3. $a_{i,j} (i > 1, j > 1)$ to the odd number adding 2 to the odd number representation of $a_{i,j-1}$.
 4. $a_{i,j}^{-1}$ to the even number adding 1 to the odd number representation of $a_{i,j}$.
 
-The input file is a space-separated value file that we write the above integer representations from $l_1$ to $l_k$, where $k$ is the number of strings in the input knot. The below figure is the example of the input file.
+The input file is a space-separated value file that we write the above integer representations from $l_1$ to $l_k$, where $k$ is the number of strings in the input link. The below figure is the example of the input file.
 
 ![figure](https://github.com/tkbtkysms/stringcmp/blob/master/fig1.jpg)
 
@@ -46,10 +46,10 @@ The 6th argument (first_longitude2) is the positive integer representing input_f
 
 The 7th argument (num_magnus_expansion) is the positive integer representing the number of magnus expation.
 
-The 8th argument (max_degree) is the positive integer representing maxmum degree of polynomials.
+The 8th argument (max_degree) is the positive integer representing the maxmum degree of polynomials.
 
 ## Execution examples
-### Compute the standard Milnor invariant for stringcmp/sample/Y.txt. The first longitude, the number of magnus expansions and the maximum degree of polynomials are 1, 3, 4, respectively.
+### Compute the standard Milnor invariant for stringcmp/sample/Y.txt. The first longitude, the number of magnus expansions and the maximum degree of polynomials are 1, 3 and 4, respectively.
 ```Shell
 $ ./milnor o n ../sample/Y.txt 1 3 4 
 # the below is the output of this execution.
