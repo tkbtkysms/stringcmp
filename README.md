@@ -42,12 +42,12 @@ The 4th argument (input_file2) is the 2nd input file name.
 The 5th argument (first_longitude1) is a positive integer representing input_file1's string starting its magnus expansion.
 So we set $i$ if we use $l_i$.
 
-The 6th argument (first_longitude2) is the positive integer representing input_file2's string starting its magnus expansion.
+The 6th argument (first_longitude2) is a positive integer representing input_file2's string starting its magnus expansion.
 **In the case we set 'o' to the 1st argument, we cannot set this argument.**
 
-The 7th argument (num_magnus_expansion) is the positive integer representing the number of magnus expation.
+The 7th argument (num_magnus_expansion) is a positive integer representing the number of magnus expation.
 
-The 8th argument (max_degree) is the positive integer representing the maxmum degree of polynomials.
+The 8th argument (max_degree) is a positive integer representing the maxmum degree of polynomials.
 
 ## Execution examples
 ### Compute the standard Milnor invariant for stringcmp/sample/Y.txt. The first longitude, the number of magnus expansions and the maximum degree of polynomials are 1, 3 and 4, respectively.
