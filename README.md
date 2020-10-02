@@ -213,5 +213,5 @@ diff 2X - Y + XX - XY - 2XZ - YX + YY + 4ZX - ZY - 2XXY + 3XYX + XYY + XYZ + 2XZ
 Calculating time:0.00495
 
 
-# simiraly to the case that the 1st argument is 'o', we can change the 2nd - 8th argument.
+# simiraly to the case that the 1st argument is 'o', we can change the 2nd - 8th arguments.
 ```
