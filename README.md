@@ -8,7 +8,14 @@ $ make
 ```
 
 ## How to make input files
-under construction
+In the following, we use our paper's notation.
+In this software, we change the segment and inverse names ($a_{i,j}$ and $a_{i,j}^{-1}$) to positive integers based on the following rules.
+1. $a_{1,1}$ to 1.
+2. $a_{i,1} (i > 1)$ to the odd number adding 2 to the odd number representation of the last segments of $l_{i-1}$.
+3. $a_{i,j} (i > 1, j > 1)$ to the odd number adding 2 to the odd number representation of $a_{i,j-1}$.
+4. $a_{i,j}^{-1}$ to the even number adding 1 to the odd number representation of $a_{i,j}$.
+
+
 
 ## Execution
 ```Shell
