@@ -13,7 +13,7 @@ Given a diagram of $k$-string link, we manually compute the initial data $L = {l
 Unlike our paper's notation, in this software, we need to name the semgents as follows.
 For the segments in the i-th string, give odd numbers from $2 * \Sum_{m=0}^{i-1}r_m + 1$ to $2 * \Sum_{m=0}^{i}r_m - 1$, by traveling the $i$-th string from bottom to top, where $r_0 = 0$ and $r_i (i > 0)$ is the number of segments in the $i$-th string. Moreover, the inverse representation ($a_{i,j}^{-1}$ in our paper) of a segment is represented by an even number adding 1 to the odd number representation of its segment.
 
-The input file is a space-separated value file that we write the above integer representation of $L$. See the below figure for example.
+The input file is a space-separated value file written the above integer representation of $L$. See the below figure for example.
 
 ![figure](https://github.com/tkbtkysms/stringcmp/blob/master/fig1.jpg)
 
