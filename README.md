@@ -15,6 +15,8 @@ In this software, we change the segment and inverse names ($a_{i,j}$ and $a_{i,j
 3. $a_{i,j} (i > 1, j > 1)$ to the odd number adding 2 to the odd number representation of $a_{i,j-1}$.
 4. $a_{i,j}^{-1}$ to the even number adding 1 to the odd number representation of $a_{i,j}$.
 
+The input file is a space-separated value file that we write the above integer representations from $l_1$ to $l_k$, where $k$ is the number of strings in the input knot. The below figure is the example of the input file.
+
 
 
 ## Execution
