@@ -17,7 +17,7 @@ In this software, we change the segment and inverse names ($a_{i,j}$ and $a_{i,j
 
 The input file is a space-separated value file that we write the above integer representations from $l_1$ to $l_k$, where $k$ is the number of strings in the input knot. The below figure is the example of the input file.
 
-
+![figure](https://github.com/tkbtkysms/stringcmp/fig1.jpg)
 
 ## Execution
 ```Shell
