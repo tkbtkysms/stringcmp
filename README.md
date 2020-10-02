@@ -11,7 +11,7 @@ $ make
 In the following, we use [our paper](https://github.com/tkbtkysms/stringcmp/blob/master/paper_dds_.pdf)'s notations.
 Given a diagram of $k$-string link, we manually compute the initial data $L = {l_1,l_2,\cdots, l_k}$. 
 Unlike our paper's notation, in this software, we need to name the semgents as follows.
-For the segments in the i-th string, give odd numbers from $2 * \Sum_{m=0}^{i-1}r_m + 1$ to $2 * \Sum_{m=0}^{i}r_m - 1, by traveling the $i$-th string from bottom to top, where $r_0 = 0$ and $r_i (i > 0)$ is the number of segments in the $i$-th string. Moreover, the inverse representation ($a_{i,j}^{-1}$ in our paper) of a segment is represented by an even number adding 1 to the odd number representation of its segment.
+For the segments in the i-th string, give odd numbers from $2 * \Sum_{m=0}^{i-1}r_m + 1$ to $2 * \Sum_{m=0}^{i}r_m - 1$, by traveling the $i$-th string from bottom to top, where $r_0 = 0$ and $r_i (i > 0)$ is the number of segments in the $i$-th string. Moreover, the inverse representation ($a_{i,j}^{-1}$ in our paper) of a segment is represented by an even number adding 1 to the odd number representation of its segment.
 
 The input file is a space-separated value file that we write the above integer representation of $L$. See the below figure for example.
 
@@ -20,10 +20,10 @@ The input file is a space-separated value file that we write the above integer r
 ## Execution
 ```Shell
 # we can execunte in stringcmp/src.
-$ ./milnor od nel input_file1 input_file2 first_longitude1 first_longitude2 depth max_degree 
+$ ./milnor od nel input_file1 input_file2 string1 string2 depth max_degree 
 ```
 The 1st argument (od) is a symbol ('o' or 'd') representing the computation mode.
-- o: we can compute the computaition of the Milnor invariant of input_file1. 
+- o: compute the Milnor invariant of input_file1. 
 - d: compute the difference of two Milnor invariants (input_file1 and input_file2)
 
 The 2nd argument (nel) is a symbol ('n', 'e' or 'l') representing the type of Milnor invariant.
@@ -37,10 +37,9 @@ The 3rd argument (input_file1) is the 1st input file name.
 The 4th argument (input_file2) is the 2nd input file name.
 **In the case we set 'o' to the 1st argument, we cannot set this argument.**
 
-The 5th argument (first_longitude1) is a positive integer representing input_file1's string starting its magnus expansion.
-So we set $i$ if we use $l_i$.
+The 5th argument (string1) is a positive integer $i$ representing input_file1's string $l_i$ starting the mapping.
 
-The 6th argument (first_longitude2) is a positive integer representing input_file2's string starting its magnus expansion.
+The 6th argument (string2) is a positive integer $j$ representing input_file2's string $l_j$ starting the mapping.
 **In the case we set 'o' to the 1st argument, we cannot set this argument.**
 
 The 7th argument (depth) is a positive integer representing the number of times the map $f_1$ is applied.
@@ -48,7 +47,7 @@ The 7th argument (depth) is a positive integer representing the number of times 
 The 8th argument (max_degree) is a positive integer representing the maxmum degree of polynomials.
 
 ## Execution examples
-### Compute the standard Milnor invariant for stringcmp/sample/Y.txt. The first longitude, the depth and the maximum degree of polynomials are 1, 3 and 4, respectively.
+### Compute the standard Milnor invariant for stringcmp/sample/Y.txt. The string, the depth and the maximum degree of polynomials are 1, 3 and 4, respectively.
 ```Shell
 $ ./milnor o n ../sample/Y.txt 1 3 4 
 # the below is the output of this execution.
@@ -121,7 +120,7 @@ answer1 1 + X + Z - XY + XZ + YX + YZ - ZY - XYZ + YXY + YXZ - YYX - 2YYZ + YZX 
 Calculating time:0.003693
 ```
 
-### Change the first longitude '1' to '2'.
+### Change the string1 '1' to '2'.
 ```Shell
 # change the 4th argument '1' to '2'
 $ ./milnor o n ../sample/ex1.txt 2 3 4
@@ -178,7 +177,7 @@ transformed input file
 answer1 1 + 2X - Y + Z + XX - XY - YX + YY - 2YZ + 2ZX + ZY - 2XXY + 3XYX + XYY + XYZ - XZY - 2YXX + YYX - YYY + 3YYZ - 5YZX - 2YZY - YZZ + ZXX - ZXY + 4ZYX + 2ZYZ - ZZY
 Calculating time:0.001511
 ```
-### Compute the diffrence of stringcmp/sample/ex1.txt and stringcmp/sample/ex2.txt. The type of Milnor invariant and the first longitude of the 2nd input file are standard and 1, respectively.  
+### Compute the diffrence of stringcmp/sample/ex1.txt and stringcmp/sample/ex2.txt. The type of Milnor invariant and the string of the 2nd input file are standard and 1, respectively.  
 ```Shell
 # change the 1st argument 'o' to 'd' and set '../sample/ex2.txt' (resp. '1') to the 4th argument (resp. the 6th argument)   
 $ ./milnor d n ../sample/ex1.txt ../sample/ex2.txt 2 1 2 3
