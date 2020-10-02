@@ -8,30 +8,28 @@ $ make
 ```
 
 ## How to make input files
-In the following, we use [our paper](https://github.com/tkbtkysms/stringcmp/blob/master/paper_dds_.pdf)'s notation.
-In this software, we change the segment and inverse names ($a_{i,j}$ and $a_{i,j}^{-1}$) to positive integers based on the following rules.
-1. $a_{1,1}$ to 1.
-2. $a_{i,1} (i > 1)$ to an odd number adding 2 to the odd number representation of the last segment of $l_{i-1}$.
-3. $a_{i,j} (i > 1, j > 1)$ to an odd number adding 2 to the odd number representation of $a_{i,j-1}$.
-4. $a_{i,j}^{-1}$ to an even number adding 1 to the odd number representation of $a_{i,j}$.
+In the following, we use [our paper](https://github.com/tkbtkysms/stringcmp/blob/master/paper_dds_.pdf)'s notations.
+Given a diagram of $k$-string link, we manually compute the initial data $L = {l_1,l_2,\cdots, l_k}$. 
+Unlike our paper's notation, in this software, we need to name the semgents as follows.
+For the segments in the i-th string, give odd numbers from $2 * \Sum_{m=0}^{i-1}r_m + 1$ to $2 * \Sum_{m=0}^{i}r_m - 1, by traveling the $i$-th string from bottom to top, where $r_0 = 0$ and $r_i (i > 0)$ is the number of segments in the $i$-th string. Moreover, the inverse representation ($a_{i,j}^{-1}$ in our paper) of a segment is represented by an even number adding 1 to the odd number representation of its segment.
 
-The input file is a space-separated value file that we write the above integer representations from $l_1$ to $l_k$, where $k$ is the number of strings in the input link. The below figure is an example of how to make the input file.
+The input file is a space-separated value file that we write the above integer representation of $L$. See the below figure for example.
 
 ![figure](https://github.com/tkbtkysms/stringcmp/blob/master/fig1.jpg)
 
 ## Execution
 ```Shell
 # we can execunte in stringcmp/src.
-$ ./milnor od nel input_file1 input_file2 first_longitude1 first_longitude2 num_magnus_expansion max_degree 
+$ ./milnor od nel input_file1 input_file2 first_longitude1 first_longitude2 depth max_degree 
 ```
 The 1st argument (od) is a symbol ('o' or 'd') representing the computation mode.
-- o: compute the Milnor invariant of input_file1. 
+- o: we can compute the computaition of the Milnor invariant of input_file1. 
 - d: compute the difference of two Milnor invariants (input_file1 and input_file2)
 
 The 2nd argument (nel) is a symbol ('n', 'e' or 'l') representing the type of Milnor invariant.
 - n: compute the standard Milnor invariant.
-- e: change the monomial transformations ($a_{i,j}\to 1 + X_i$ and $a_{i,j}^{-1}\to 1 - X_i + X_i^{2} \cdots X_i^k$, where $k$ is max_degree)
-  to Maclaurin expansions of $e^x$ and $e^{-x}$ ($a_{i,j} \to 1 + X_i + \frac{1}{2!}X_i^2 + \cdots \frac{1}{k!}X_i^k$ and $a_{i,j}^{-1} \to 1 + X_i - \frac{1}{2!}X_i^2 + \cdots \frac{1}{k!}X_i^k$).
+- e: change the Magnus expansion ($a_{i,j}\to 1 + X_i$ and $a_{i,j}^{-1}\to 1 - X_i + X_i^{2} \cdots X_i^k$, where $k$ is max_degree)
+  to the Maclaurin expansions of $e^x$ and $e^{-x}$ ($a_{i,j} \to 1 + X_i + \frac{1}{2!}X_i^2 + \cdots \frac{1}{k!}X_i^k$ and $a_{i,j}^{-1} \to 1 + X_i - \frac{1}{2!}X_i^2 + \cdots \frac{1}{k!}X_i^k$).
 - l: compute the Milnor invariant link homotopy
 
 The 3rd argument (input_file1) is the 1st input file name.
@@ -45,12 +43,12 @@ So we set $i$ if we use $l_i$.
 The 6th argument (first_longitude2) is a positive integer representing input_file2's string starting its magnus expansion.
 **In the case we set 'o' to the 1st argument, we cannot set this argument.**
 
-The 7th argument (num_magnus_expansion) is a positive integer representing the number of magnus expation.
+The 7th argument (depth) is a positive integer representing the number of times the map $f_1$ is applied.
 
 The 8th argument (max_degree) is a positive integer representing the maxmum degree of polynomials.
 
 ## Execution examples
-### Compute the standard Milnor invariant for stringcmp/sample/Y.txt. The first longitude, the number of magnus expansions and the maximum degree of polynomials are 1, 3 and 4, respectively.
+### Compute the standard Milnor invariant for stringcmp/sample/Y.txt. The first longitude, the depth and the maximum degree of polynomials are 1, 3 and 4, respectively.
 ```Shell
 $ ./milnor o n ../sample/Y.txt 1 3 4 
 # the below is the output of this execution.
@@ -66,7 +64,7 @@ answer1 1 + XYY - 2YXY + YYX - XXYY + XYXY - XYYY + YXXY - YXYX + YXYY + YYXY - 
 Calculating time:0.000786
 ```
 
-### Change the monomial transformations of the standard Milnor invariant to Maclaurin expansions of $e^x$ and $e^{-x}$
+### Change  to Maclaurin expansions of $e^x$ and $e^{-x}$
 ```Shell
 # change the 2nd argument 'n' to 'e'
 $ ./milnor o e ../sample/Y.txt 1 3 4
