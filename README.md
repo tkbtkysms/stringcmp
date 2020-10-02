@@ -101,7 +101,7 @@ Calculating time:0.000829
 ```
 
 
-### Change the input file stringcmp/sample/Y.txt to stringcmp/sample/ex1.txt
+### Change the input file from stringcmp/sample/Y.txt to stringcmp/sample/ex1.txt
 ```Shell
 # change the 3rd argument '../sample/Y.txt' to '../sample/ex1.txt'
 $ ./milnor o n ../sample/ex1.txt 1 3 4 # compute the standard Milnor invariant
@@ -119,7 +119,7 @@ answer1 1 + X + Z - XY + XZ + YX + YZ - ZY - XYZ + YXY + YXZ - YYX - 2YYZ + YZX 
 Calculating time:0.003693
 ```
 
-### Change the string starting the mapping '1' to '2'.
+### Change the string starting the mapping from '1' to '2'.
 ```Shell
 # change the 4th argument '1' to '2'
 $ ./milnor o n ../sample/ex1.txt 2 3 4
@@ -140,7 +140,7 @@ Calculating time:0.003639
 Calculating time:0.00136
 ```
 
-### Change the number of magnus expansion '3' to '5'
+### Change the number of magnus expansion from '3' to '5'
 ```Shell
 # change the 5th argument '3' to '5'
 $ ./milnor o n ../sample/ex1.txt 2 2 4
@@ -159,7 +159,7 @@ Calculating time:0.002564
 
 ```
 
-### Change the maximum degree of polynomials '4' to '3'
+### Change the maximum degree of polynomials from '4' to '3'
 ```Shell
 # change the 6th argument '4' to '3'
 $ ./milnor o n ../sample/ex1.txt 2 2 3
