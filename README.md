@@ -62,7 +62,7 @@ answer1 1 + XYY - 2YXY + YYX - XXYY + XYXY - XYYY + YXXY - YXYX + YXYY + YYXY - 
 Calculating time:0.000786
 ```
 
-### Change  to Maclaurin expansions of $e^x$ and $e^{-x}$
+### Change to Maclaurin expansions of $e^x$ and $e^{-x}$
 ```Shell
 # change the 2nd argument 'n' to 'e'
 $ ./milnor o e ../sample/Y.txt 1 3 4
@@ -140,7 +140,7 @@ Calculating time:0.003639
 Calculating time:0.00136
 ```
 
-### Change the number of magnus expansion from '3' to '5'
+### Change the depth from '3' to '5'
 ```Shell
 # change the 5th argument '3' to '5'
 $ ./milnor o n ../sample/ex1.txt 2 2 4
