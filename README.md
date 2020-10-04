@@ -62,7 +62,7 @@ answer1 1 + XYY - 2YXY + YYX - XXYY + XYXY - XYYY + YXXY - YXYX + YXYY + YYXY - 
 Calculating time:0.000786
 ```
 
-### Change the Magnus expansion to Maclaurin expansions of $e^x$ and $e^{-x}$
+### Change the Magnus expansion to the Maclaurin expansions of $e^x$ and $e^{-x}$
 ```Shell
 # change the 2nd argument 'n' to 'e'
 $ ./milnor o e ../sample/Y.txt 1 3 4
